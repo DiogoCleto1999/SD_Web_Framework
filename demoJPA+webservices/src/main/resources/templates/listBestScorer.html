@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Best Scorer</title>
+        <meta charset="utf8"/>
+    </head>
+    <body>
+        <h1>Best Scorer</h1>
+  
+        <table border="1">
+          <tr>
+            <th>NAME</th>
+            <th>POSITION</th>
+            <th>BIRTHDAY</th>
+            <th>TEAM</th>
+            <th>GOALS</th>
+          </tr>
+          <tr th:each="p : ${player}">
+            <td th:text="${p.name}">name</td>
+            <td th:text="${p.position}">position</td>
+            <td th:text="${p.data}">birthday</td>
+            <td th:text="${p.team?.name}">team</td>
+            <td th:text="${p.goals}">goals</td>
+            
+          </tr>
+        </table>
+        
+        <a th:href="@{/}" class="btn btn-primary">Back</a>
+    </body>
+</html>

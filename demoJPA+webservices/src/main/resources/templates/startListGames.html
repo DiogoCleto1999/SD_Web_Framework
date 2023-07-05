@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List of Games</title>
+        <meta charset="utf8"/>
+    </head>
+    <body>
+        <h1>List of Games</h1>
+  
+        <table border="1">
+          <tr>
+            <th>ID</th>
+            <th>LOCALIZACAO</th>
+            <th>DATA</th>
+            <th>HORA</th>
+            <th>HOME TEAM</th>
+            <th>HOME TEAM SCORE</th>
+            <th>AWAY TEAM SCORE</th>
+            <th>AWAY TEAM</th>
+            <th>GAME EVENTS</th>
+            <th></th>
+          </tr>
+          <tr th:each="t : ${games}">
+            <td th:text="${t.id}">id</td>
+            <td th:text="${t.local}">local</td>
+            <td th:text="${t.date}">date</td>
+            <td th:text="${t.time}">time</td>
+            <td th:text="${t.teams[0]}">home</td>
+            <td th:text="${t.scoreTeamA}">home score</td>
+            <td th:text="${t.scoreTeamB}">away score</td>
+            <td th:text="${t.teams[1]}">away</td>
+            <td><a th:href="@{NoUsereventsFromGame(id=${t.id})}">Events</a></td>
+            
+          </tr>
+        </table>
+        
+        <a th:href="@{/}" class="btn btn-primary">Back</a>
+    </body>
+</html>

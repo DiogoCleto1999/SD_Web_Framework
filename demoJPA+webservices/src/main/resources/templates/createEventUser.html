@@ -1,0 +1,41 @@
+<form th:action="@{saveEventUser(id=${game.id})}" th:object="${event}" method="post">
+    <div="form-row">
+        <div>
+            <input type="hidden" th:field="*{id}">
+        </div>
+        <div>
+            <label>Time</label>
+            <input type="number" th:field="*{time}">
+        </div>
+        <!--
+        <div>
+            <label>Hour</label>
+            <input type="time" th:field="*{time}">
+        </div>-->
+        
+
+        <div class="form-group col-auto">
+            <label for="String" class="form-label">Tipo de Evento</label>
+            <select id="String" class="form-select" th:field="*{type}">
+                <option th:each="n : ${events_names}"
+                        th:value="${n}"
+                        th:text="${n}">
+                    Event name
+                </option>
+            </select>
+        </div>
+        
+        <div class="form-group col-auto">
+            <label for="Player" class="form-label">Player</label>
+            <select id="Player" class="form-select" th:field="*{player}">
+                <option th:each="t : ${players}"
+                        th:value="${t.id}"
+                        th:text="${t.name}">
+                    Player
+                </option>
+            </select>
+        </div>
+
+        <button type="submit">Create Event</button>
+    </div>
+</form>

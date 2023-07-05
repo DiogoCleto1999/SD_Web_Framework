@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN</title>
+        <meta charset="utf8"/>
+    </head>
+<body>
+    <main class="container-fluid">
+        <form th:action="@{saveLogin}" th:object="${user}" method="post">
+            <div class="row mb-3">
+                <div class="col-auto">
+                    <label for="inputUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" th:field="*{username}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-auto">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" th:field="*{password}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a th:href="@{register}" class="btn btn-primary">registar</a>
+            <a th:href="@{/}" class="btn btn-primary">Back</a>
+        </form>
+    </main>
+</body>
+</html>

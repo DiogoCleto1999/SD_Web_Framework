@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REGISTER</title>
+        <meta charset="utf8"/>
+    </head>
+<body>
+    <main class="container-fluid">
+    <h1>Register</h1>
+    <form th:action="@{saveUser}" th:object="${user}" method="post">
+        <div class="row mb-3">
+            <div class="col-auto">
+                <label for="inputUsername" class="form-label">Username</label>
+                <input type="text" class="form-control" id="inputUsername" th:field="*{username}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-auto">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword" th:field="*{password}">
+            </div>
+            <div class="col-auto">
+                <label for="inputPassword" class="form-label">Repeat Password</label>
+                <input type="password" class="form-control" id="inputPassword2" th:field="*{matchingPassword}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-auto">
+                <label for="inputEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="inputEmail" th:field="*{email}">
+            </div>
+            <div class="col-auto">
+                <label for="inputTelephone" class="form-label">Telephone</label>
+                <input type="tel" class="form-control" id="inputTelephone" th:field="*{telephone}">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-auto">
+                <label for="inputRole" class="form-label">Role</label>
+                <input type="text" class="form-control" id="inputRole" th:field="*{role}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </main>
+</body>
+</html>

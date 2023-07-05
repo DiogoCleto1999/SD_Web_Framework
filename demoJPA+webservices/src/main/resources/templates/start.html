@@ -1,0 +1,17 @@
+
+<body>
+    
+        <h1>scoreDEI</h1>
+        <a th:href="@{teams_list}" class="btn btn-primary">ListarTeams</a>
+        <a th:href="@{players_list}" class="btn btn-primary">ListarPlayers</a>
+        <a th:href="@{games_list}" class="btn btn-primary">ListGames</a>
+        <a th:href="@{login}" class="btn btn-primary">Login</a>
+        <a th:href="@{register}" class="btn btn-primary">registar</a>
+        <a th:href="@{stats}" class="btn btn-primary">stats</a>
+        <form th:action="@{/saveData}" method="post">
+            <div="form-row">
+                <button type="submit">Create Dummy Data</button>
+            </div>
+        </form>
+    </main>
+</body>

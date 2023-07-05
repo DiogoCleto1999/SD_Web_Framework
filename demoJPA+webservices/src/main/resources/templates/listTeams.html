@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List of Teams</title>
+        <meta charset="utf8"/>
+    </head>
+    <body>
+        <h1>List of Teams</h1>
+  
+        <table border="1">
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>VITORIAS</th>
+            <th>DERROTAS</th>
+            <th>EMPATES</th>
+            <th>EDIT</th>
+          </tr>
+          <tr th:each="t : ${teams}">
+            <td th:text="${t.id}">id</td>
+            <td th:text="${t.name}">name</td>
+            <td th:text="${t.victory}">vitorias</td>
+            <td th:text="${t.defeat}">derrotas</td>
+            <td th:text="${t.draw}">empates</td>
+            <td><a th:href="@{editTeam(id=${t.id})}">Edit</a></td>
+          </tr>
+        </table>
+        <a th:href="@{createTeam}" class="btn btn-primary">Create Team</a>
+        <a th:href="@{logged}" class="btn btn-primary">Back</a>
+    </body>
+</html>
